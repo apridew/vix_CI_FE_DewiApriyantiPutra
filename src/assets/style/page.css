@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 * {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
+
 :root {
     --navy: #002772;
     --pink: #FDE2FF;
@@ -14,6 +16,11 @@
     --gray: #DCDCDC;
     --white: #FFFFFF
 }
+
+div#app {
+    height: 120vh;
+}
+
 .container {
     position: relative;
     width: 100%;
@@ -22,6 +29,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .overlay {
     position: absolute;
     z-index: 1;
@@ -29,18 +37,30 @@
     left: 0;
     width: 100%;
 }
-.overlay > img {
+
+.overlay>img {
     width: 100%;
 }
+
+.smile {
+    text-align: center;
+    padding-left: 25px;
+}
+
+.smile>img {
+    width: 75%;
+    position: relative;
+}
+
 .card {
     display: flex;
     position: relative;
+    margin-top: 20%;
     z-index: 2;
     width: 80%;
-    height: 70vh;
     background-color: var(--white);
     border-radius: 10px;
-    padding: 48px 32px;
+    padding: 10% 32px;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
@@ -51,12 +71,14 @@
     background-color: var(--gray);
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
 .skeleton-details-top {
     width: 100%;
     height: 25%;
     background-color: var(--gray);
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
 .skeleton-details-bottom {
     width: 100%;
     height: 70%;
@@ -73,14 +95,17 @@
     align-items: center;
     flex-direction: column;
 }
-.product-unavailable-container > .overlay {
+
+.product-unavailable-container>.overlay {
     top: 10%;
     left: 5%;
 }
-.product-unavailable-container > .product-details {
+
+.product-unavailable-container>.product-details {
     text-align: center;
     z-index: 2;
 }
+
 .product-unavailable-container .cta-next {
     margin: 0px auto;
     border: 2px solid black;
@@ -89,31 +114,35 @@
 
 /* available product */
 .product-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 30% 65%;
-    gap: 16px;
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
 }
+
 .product-thumbnail {
-    width: 100%;
+    flex: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.product-thumbnail > img {
-    width: 80%;
+
+.product-thumbnail>img {
+    max-width: 250px;
 }
+
 .product-details {
     display: flex;
-    width: 100%;
+    flex: 60%;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .product-details .title {
     font-size: 32px;
     font-weight: 600;
 }
+
 .product-details .sub-title {
     display: flex;
     width: 100%;
@@ -124,17 +153,20 @@
     padding-bottom: 16px;
     border-bottom: 1px solid var(--gray);
 }
+
 .product-details .rating {
     display: flex;
     gap: 3px;
     align-items: center;
 }
-.rating > .circle {
+
+.rating>.circle {
     display: block;
     width: 14px;
     height: 14px;
     border-radius: 100%;
 }
+
 .product-details .description {
     width: 100%;
     margin-top: 24px;
@@ -143,10 +175,12 @@
     /* padding-bottom: 16px;
     border-bottom: 1px solid var(--gray); */
 }
-.product-details > .bottom {
+
+.product-details>.bottom {
     padding-top: 16px;
     border-top: 1px solid var(--gray);
 }
+
 .product-details .price {
     font-size: 32px;
     font-weight: 600;
@@ -159,58 +193,73 @@
     display: flex;
     gap: 12px;
 }
-.cta > .cta-buy,
-.cta > .cta-next {
+
+.cta>.cta-buy,
+.cta>.cta-next {
     width: 35%;
-    height: 36px;
+    height: 45px;
     font-size: 16px;
-    border-radius: none;
     font-weight: bold;
     cursor: pointer;
 }
-.cta > .cta-buy {
+
+.cta>.cta-buy {
     color: var(--white);
     border: none;
 }
-.cta > .cta-next {
+
+.cta>.cta-next {
     background-color: var(--white);
 }
+
 .bg-blue {
     background: linear-gradient(180deg, var(--blue) 65%, var(--white) 50%);
 }
+
 .bg-pink {
     background: linear-gradient(180deg, var(--pink) 65%, var(--white) 50%);
 }
+
 .bg-gray {
     background: linear-gradient(180deg, var(--gray) 65%, var(--white) 50%);
 }
+
 .bg-white {
     background-color: var(--white);
 }
+
 .bg-navy {
     background-color: var(--navy);
 }
+
 .bg-magenta {
     background-color: var(--magenta);
 }
+
 .border-navy {
     border: 2px solid var(--navy);
 }
+
 .border-magenta {
     border: 2px solid var(--magenta);
 }
+
 .font-navy {
     color: var(--navy);
 }
+
 .font-magenta {
     color: var(--magenta);
 }
 
 /* animation */
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: .8;
     }
+
     50% {
         opacity: .3;
     }
